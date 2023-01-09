@@ -1,0 +1,26 @@
+@import url("../fonts/customes.css");
+@import url("./nav.css");
+@import url("./home.css");
+@import url("./categories.css");
+@import url("./about.css");
+@import url("./footer.css");
+@import url("./orders.css");
+
+*{
+    font-size: 18px;
+    font-family: "poppins",sans-serif;
+    color: black;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+button,input,textPath,option,select{
+    outline: none;
+}

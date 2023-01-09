@@ -1,0 +1,219 @@
+
+
+.navigation{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    justify-content: space-between;
+    padding: 20px 2%;
+    position: fixed;
+    width: 100%;
+    margin-top: -15px;
+    z-index: 100;
+}
+
+.navigation_logo_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    background: url("../../img/AQ-LOGO.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.navigation_nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 50px;
+    background-color: transparent;
+}
+
+.navigation_nav div .nav-link{
+    display: inline-block;
+    text-transform: capitalize;
+    text-decoration: none;
+    margin: 0px 10px;
+    padding-top: 0px;
+    font-size: 15px;
+    color: white;
+    transition: 0.2s linear;
+}
+
+.category_drop{
+    display: inline-block;
+    text-transform: capitalize;
+    text-decoration: none;
+    margin: 0px 10px;
+    padding-top: 5px;
+    font-size: 15px;
+    color: white;
+    transition: 0.2s linear;
+}
+
+.navigation_nav div .nav-link:hover{
+    transition: 0.2s linear;
+    color: lightgray;
+}
+
+.category_dropdown{
+    display: none;
+    position: absolute;
+    background-color: black;
+    width: 250px;
+    padding: 10px 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 100;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.category_drop_cont:hover .category_dropdown{
+    display: block;
+}
+
+.category_drop_cont:hover .category_drop{
+    color: lightslategray;
+}
+
+.category_dropdown li{
+    text-decoration: none;
+    list-style: none;
+    padding: 4px 0px;
+}
+
+.category_dropdown li:hover{
+    background-color: rgba(192, 192, 192, 0.185);
+}
+
+.category_dropdown li a{
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: lightgray;
+    font-family: poppins;
+    transition: 0.2s linear;
+}
+
+.category_dropdown li a:hover{
+    color: grey;
+    transition: 0.2s linear;
+}
+
+.category_dropdown .border-d{
+    border-bottom: 1px solid rgba(192, 192, 192, 0.288);
+}
+
+
+.account_dropdown{
+    display: none;
+    position: absolute;
+    background-color: black;
+    width: 100px;
+    padding: 10px 10px;
+    margin-left: -30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 100;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.account_dropdown .border-d{
+    border-bottom: 1px solid rgba(192, 192, 192, 0.288);
+}
+
+.account_dropdown li{
+    text-decoration: none;
+    list-style: none;
+    padding: 4px 0px;
+}
+
+.account_dropdown li a{
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: lightgray;
+    font-family: poppins;
+    transition: 0.2s linear;
+}
+
+.account_dropdown li a:hover{
+    color: grey;
+    transition: 0.2s linear;
+}
+
+.account-drop_cont:hover .account_dropdown{
+    display: block;
+}
+
+
+
+
+
+
+
+.navigation_nav div .active{
+    /* color: rgb(53, 53, 53); */
+    color: lightslategray;
+    font-weight: bold;
+    font-family: poppins, sans-serif;
+    font-size: 15px;
+}
+
+.navigation_nav_accounts{
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+
+.navigation_nav_accounts .user_links{
+    display: inline-block;
+    margin: 0px 10px;
+    text-decoration: none;
+    color: lightgrey;
+}
+
+.navigation_search_section{
+    display: flex;
+    flex-direction: row;
+    padding-top: 50px;
+    background-color: transparent;
+}
+
+.navigation_search_section form {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    border-radius: 50px;
+    border: 1px solid silver;
+    background-color: rgb(245, 245, 245);
+}
+
+.navigation_search_section form input{
+    height: 30px;
+    font-size: 15px;
+    padding: 0px 5px;
+    padding-left: 20px;
+    text-transform: capitalize;
+    border: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: transparent;
+}
+
+.navigation_search_section form button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
