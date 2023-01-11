@@ -22,34 +22,34 @@ export default function Categories() {
           
         <div className='category_container' style={{marginTop:"0px"}}>
             <div className='category_container_title'>
-              <span>categories</span>
-              <span><a href="#"></a></span>
+              <span>Drag to see categories</span>
+              <span><a href="#">{/* see all */}</a></span>
             </div>
             <div className='category_listing'>
                 <Slider {...settings}>
                   <div className='category_listing_item'>
-                    <span className='category_listing_item_img'></span>
+                    <span className='category_listing_item_img' style={{backgroundImage: `url(${ require("./img/product1.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
                     <span className='category_listing_item_info_ctg'>
                       <span className='category_listing_item_info_name_ctg'><a href="">love chair</a></span>
                     </span>
                   </div>
 
                   <div className='category_listing_item'>
-                    <span className='category_listing_item_img'></span>
+                    <span className='category_listing_item_img' style={{backgroundImage: `url(${ require("./img/product2.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
                     <span className='category_listing_item_info_ctg'>
                       <span className='category_listing_item_info_name_ctg'><a href="">love chair</a></span>
                     </span>
                   </div>
 
                   <div className='category_listing_item'>
-                    <span className='category_listing_item_img'></span>
+                    <span className='category_listing_item_img' style={{backgroundImage: `url(${ require("./img/product3.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
                     <span className='category_listing_item_info_ctg'>
                       <span className='category_listing_item_info_name_ctg'><a href="">love chair</a></span>
                     </span>
                   </div>
 
                   <div className='category_listing_item'>
-                    <span className='category_listing_item_img'></span>
+                    <span className='category_listing_item_img' style={{backgroundImage: `url(${ require("./img/product4.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
                     <span className='category_listing_item_info_ctg'>
                       <span className='category_listing_item_info_name_ctg'><a href="">love chair</a></span>
                     </span>
@@ -57,21 +57,21 @@ export default function Categories() {
 
 
                   <div className='category_listing_item'>
-                    <span className='category_listing_item_img'></span>
+                    <span className='category_listing_item_img' style={{backgroundImage: `url(${ require("./img/product5.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
                     <span className='category_listing_item_info_ctg'>
                       <span className='category_listing_item_info_name_ctg'><a href="">love chair</a></span>
                     </span>
                   </div>
 
                   <div className='category_listing_item'>
-                    <span className='category_listing_item_img'></span>
+                    <span className='category_listing_item_img' style={{backgroundImage: `url(${ require("./img/chair.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
                     <span className='category_listing_item_info_ctg'>
                       <span className='category_listing_item_info_name_ctg'><a href="">love chair</a></span>
                     </span>
                   </div>
 
                   <div className='category_listing_item'>
-                    <span className='category_listing_item_img'></span>
+                    <span className='category_listing_item_img' style={{backgroundImage: `url(${ require("./img/product1.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
                     <span className='category_listing_item_info_ctg'>
                       <span className='category_listing_item_info_name_ctg'><a href="">love chair</a></span>
                     </span>
@@ -96,12 +96,12 @@ export default function Categories() {
                 <span className='category_in_specific_item_top_img_btns'>
                   <a href="">$ 200</a>
                 </span>
-                <span className='category_in_specific_item_top_img_thumbnail'>image</span>
+                <span className='category_in_specific_item_top_img_thumbnail' style={{backgroundImage: `url(${ require("./img/product1.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
               </div>
             </div>
 
             <div className='category_in_specific_item'>
-              <div className='category_in_specific_item_img'></div>
+              <div className='category_in_specific_item_img' style={{backgroundImage: `url(${ require("./img/product3.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
               <div className='category_in_specific_item_info'>
                 <div className='category_in_specific_item_info_title'>U - Buddy Table</div>
                 <div className='category_in_specific_item_info_content'>
@@ -114,7 +114,7 @@ export default function Categories() {
             </div>
 
             <div className='category_in_specific_item'>
-              <div className='category_in_specific_item_img'></div>
+              <div className='category_in_specific_item_img' style={{backgroundImage: `url(${ require("./img/product2.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
               <div className='category_in_specific_item_info'>
                 <div className='category_in_specific_item_info_title'>U - Buddy Table</div>
                 <div className='category_in_specific_item_info_content'>
@@ -127,7 +127,7 @@ export default function Categories() {
             </div>
 
             <div className='category_in_specific_item'>
-              <div className='category_in_specific_item_img'></div>
+              <div className='category_in_specific_item_img' style={{backgroundImage: `url(${ require("./img/product5.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
               <div className='category_in_specific_item_info'>
                 <div className='category_in_specific_item_info_title'>U - Buddy Table</div>
                 <div className='category_in_specific_item_info_content'>
@@ -140,7 +140,7 @@ export default function Categories() {
             </div>
 
             <div className='category_in_specific_item'>
-              <div className='category_in_specific_item_img'></div>
+              <div className='category_in_specific_item_img' style={{backgroundImage: `url(${ require("./img/chair.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
               <div className='category_in_specific_item_info'>
                 <div className='category_in_specific_item_info_title'>U - Buddy Table</div>
                 <div className='category_in_specific_item_info_content'>
@@ -153,7 +153,7 @@ export default function Categories() {
             </div>
 
             <div className='category_in_specific_item category_in_specific_item_reverse'>
-              <div className='category_in_specific_item_img'></div>
+              <div className='category_in_specific_item_img' style={{backgroundImage: `url(${ require("./img/product4.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
               <div className='category_in_specific_item_info'>
                 <div className='category_in_specific_item_info_title'>U - Buddy Table</div>
                 <div className='category_in_specific_item_info_content'>

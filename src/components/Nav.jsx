@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import {Link} from "react-router-dom";
 
-
 export default function Nav() {
+
   return (
+    <>
+
     <nav className='navigation'>
         <div className='navigation_logo_section'></div>
 
@@ -40,22 +42,24 @@ export default function Nav() {
             <div className='navigation_nav_accounts'>
                 <Link to="/accounts" className='user_links account-drop_cont'>
                     <span className=''><i className="fa fa-user" style={{fontSize:"16px", color:"lightgreen"}}></i></span>
-                    <ul className='account_dropdown'>
+{/*                     <ul className='account_dropdown'>
                         <li className='border-d'><a href=''>signup</a></li>
                         <li className='border-d'><a href=''>signin</a></li>
                         <li><a href=''>logout</a></li>
-                    </ul>
+                    </ul> */}
                 </Link>
+                {/* <span onClick={showAccount} className='user_links'><i className="fa fa-user" style={{fontSize:"16px", color:"lightgreen",cursor: "pointer"}}></i></span> */}
                 <Link to="/cart" className='user_links'><span><i className="fa fa-shopping-cart" style={{fontSize:"16px", color:"lightgreen"}}></i> <sup style={{color:"white"}}>12</sup></span></Link>
             </div>
         </nav>
 
         <div className='navigation_search_section'>
             <form action="" method="post">
-                <input type="search" name="search" placeholder='search'/>
+                <input type="search" name="search" placeholder='search here'/>
                 <button type='button'><SearchIcon sx={{color: "pink"}}/></button>
             </form>
         </div>
     </nav>
+    </>
   )
 }

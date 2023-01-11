@@ -33,7 +33,7 @@ export default function About() {
           </span>
         </div>
 
-        <div data-aos="fade-right" className='about-container_1_img'>
+        <div className='about-container_1_img' style={{backgroundImage: `url(${ require("./img/people1.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}>
         </div>
       </section>
       

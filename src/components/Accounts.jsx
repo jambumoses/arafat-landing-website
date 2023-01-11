@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Login from './Login'
 
 export default function Accounts() {
-  return (
-    <div>Accounts</div>
-  )
+  return <Login/>
 }

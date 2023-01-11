@@ -5,6 +5,10 @@
 @import url("./about.css");
 @import url("./footer.css");
 @import url("./orders.css");
+@import url("./brands.css");
+@import url("./contact.css");
+@import url("./Login.css");
+@import url("./cart.css");
 
 *{
     font-size: 18px;
@@ -15,6 +19,7 @@
 body{
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
 }
 
 html{

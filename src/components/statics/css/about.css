@@ -50,7 +50,8 @@
 
 .about-container_1_img{
     position: absolute;
-    background-color: rgba(211, 211, 211, 0.247);
+    /* background-color: rgba(211, 211, 211, 0.247); */
+    background-color: transparent;
     height: 300px;
     width: 400px;
     margin-top: 600px;
@@ -84,7 +85,9 @@
 .about-container_2 p{
     margin-bottom: 100px;
     width: 50%;
-    color: rgb(182, 182, 182);
+    color: grey;
+    font-size: 15px;
+    line-height: 30px;
 }
 
 

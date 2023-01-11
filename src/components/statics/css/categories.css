@@ -50,6 +50,7 @@
     background-color: transparent;
     height: 200px;
     overflow: hidden;
+    cursor:move;
 }
 
 .category_listing_item{
@@ -63,7 +64,7 @@
 
 .category_listing_item_img{
     display: block;
-    background: url("../../img/chair.png");
+    /* background: url("../../img/chair.png"); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -229,7 +230,7 @@
 }
 
 .category_in_specific_item_top_img_thumbnail{
-    background-color: lightgray;
+    background-color: transparent; /* image */
     width: 70%;
     height: 400px;
 }
@@ -253,9 +254,9 @@
 }
 
 .category_in_specific_item_img{
-    background-color: azure;
+    background-color: transparent; /* image */
     height: 100%;
-    width: 50%;
+    width: 50%; 
 }
 
 .category_in_specific_item_info{
@@ -350,6 +351,7 @@
 .aside_ul li{
     text-transform: capitalize;
     color: rgb(44, 44, 44);
+    list-style: none;
 }
 
 .aside_ul li a{
@@ -358,4 +360,11 @@
     font-size: 15px;
     color: rgb(44, 44, 44);
     color: lightgray;
+    transition: 0.2s linear;
+}
+
+.aside_ul li a:hover{
+    /* color: rgb(44, 44, 44); */
+    color: darkslategrey;
+    transition: 0.2s linear;
 }

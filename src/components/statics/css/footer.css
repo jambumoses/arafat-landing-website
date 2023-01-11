@@ -4,7 +4,9 @@
     justify-content: center;
     align-items: center;
     background-color: black;
-    padding: 10%;
+    padding: 5% 10%;
+    border-top: 1px solid rgba(192, 192, 192, 0.178);
+    border-bottom: 1px solid rgba(192, 192, 192, 0.178);
 }
 
 
@@ -80,7 +82,8 @@
 }
 
 .footer_brands_item{
-    background-color: rgba(211, 211, 211, 0.089);
+    /* background-color: rgba(211, 211, 211, 0.089); */
+    background-color: transparent;
     height: 100px;
     width: 200px;
     margin: 20px;
@@ -174,6 +177,12 @@
     font-size: 13px;
     text-decoration: none;
     color: rgb(182, 182, 182);
+    transition: 0.2s linear;
+}
+
+.foot_note_info span a:hover{
+    color: darkslategrey;
+    transition: 0.2s linear;
 }
 
 .foot_note_info_c{
@@ -206,6 +215,15 @@
     text-decoration: none;
     margin: 0px;
     margin-right: 20px;
+}
+
+.footer_socials_listings a i{
+    transition: 0.2s linear;
+}
+
+.footer_socials_listings a i:hover{
+    color: darkslategrey;
+    transition: 0.2s linear;
 }
 
 .footer_bottom{

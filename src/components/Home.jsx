@@ -24,7 +24,7 @@ export default function Home() {
         </Carousel>
         
     </section>
-
+{/* 
     <section className='lastest_product_grid'>
       <section className='lastest_product_grid_sect1'>
         <div className='lastest_product_grid_sect1_top'>
@@ -64,7 +64,74 @@ export default function Home() {
           <span className='lastest_product_grid_sect3_thumbnail_price'>$199</span>
         </div>
       </section>
+    </section> */}
+
+
+    <section className='home_products_section'>
+      <div className='home_products_section_item'>
+        <a href="http://home">
+          <span className='home_products_section_img' style={{backgroundImage: `url(${ require("./img/product1.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
+        </a>
+        <span className='home_products_section_info'>
+          <span className='home_products_section_info_name'>serviettes cell babby</span>
+          <span className='home_products_section_info_price'>$ 200 <small>- each</small></span>
+        </span>
+      </div>
+
+      <div className='home_products_section_item'>
+        <a href="http://home">
+          <span className='home_products_section_img' style={{backgroundImage: `url(${ require("./img/product2.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
+        </a>
+        <span className='home_products_section_info'>
+          <span className='home_products_section_info_name'>serviettes cell babby</span>
+          <span className='home_products_section_info_price'>$ 200 <small>- each</small></span>
+        </span>
+      </div>
+
+      <div className='home_products_section_item'>
+        <a href="http://home">
+          <span className='home_products_section_img' style={{backgroundImage: `url(${ require("./img/product3.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
+        </a>
+        <span className='home_products_section_info'>
+          <span className='home_products_section_info_name'>serviettes cell babby</span>
+          <span className='home_products_section_info_price'>$ 200 <small>- each</small></span>
+        </span>
+      </div>
+
+
+      <div className='home_products_section_item'>
+        <a href="http://home">
+          <span className='home_products_section_img' style={{backgroundImage: `url(${ require("./img/product4.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
+        </a>
+        <span className='home_products_section_info'>
+          <span className='home_products_section_info_name'>serviettes cell babby</span>
+          <span className='home_products_section_info_price'>$ 200 <small>- each</small></span>
+        </span>
+      </div>
+
+      <div className='home_products_section_item'>
+        <a href="http://home">
+          <span className='home_products_section_img' style={{backgroundImage: `url(${ require("./img/product5.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
+        </a>
+        <span className='home_products_section_info'>
+          <span className='home_products_section_info_name'>serviettes cell babby</span>
+          <span className='home_products_section_info_price'>$ 200 <small>- each</small></span>
+        </span>
+      </div>
+
+      <div className='home_products_section_item'>
+        <a href="http://home">
+          <span className='home_products_section_img' style={{backgroundImage: `url(${ require("./img/product3.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
+        </a>
+        <span className='home_products_section_info'>
+          <span className='home_products_section_info_name'>serviettes cell babby</span>
+          <span className='home_products_section_info_price'>$ 200 <small>- each</small></span>
+        </span>
+      </div>
     </section>
+    <div className='home_products_section_morebtn'>
+      <a href=""><button type='button'>see more</button></a>
+    </div>
     </>
   )
 }

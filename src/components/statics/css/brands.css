@@ -1,0 +1,76 @@
+.brand_title{
+    padding: 0px 8%;
+    padding-top: 150px;
+    background-color: black;
+    color: grey;
+    font-size: 50px;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+
+.brand_section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    background-color: black;
+    padding: 5% 5%;
+    padding-top: 0px;
+}
+
+.brand{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    /* height: 300px; */
+    background-color: transparent;
+    padding: 25px;
+    margin: 20px 20px;
+}
+
+.brand_count{
+    display: block;
+    font-size: 50px;
+    font-family: monospace;
+    color: white;
+}
+
+.brand_name{
+    display: block;
+    text-transform: capitalize;
+    font-size: 30px;
+    font-family: poppins,sans-serif;
+    padding: 2px 0px;
+    color: white;
+}
+
+.brand_image{
+    display: block;
+    /* background-color: lightgreen; */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 150px;
+}
+
+.brand_description{
+    background-color: transparent;
+    height: 100px;
+    font-size: 13px;
+    padding: 10px 0px;
+    color: lightgray;
+}
+
+.brand a{
+    text-transform: lowercase;
+    font-size: 13px;
+    text-decoration: none;
+    color: darkslategrey;
+    transition: 0.2s linear;
+}
+
+.brand a:hover{
+    color: darkolivegreen;
+    transition: 0.2s linear;
+}

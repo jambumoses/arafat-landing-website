@@ -17,6 +17,10 @@ import Contact from "./components/Contact"
 import Accounts from "./components/Accounts"
 import Cart from "./components/Cart"
 import Footer from './components/Footer';
+import Register from './components/Register';
+import Login from './components/Login';
+import LostPassword from './components/LostPassword';
+import Verification from './components/Verification';
 
 
 export default function App() {
@@ -36,7 +40,14 @@ export default function App() {
                 <Route path="/categories" component={Categories} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/accounts" component={Accounts} />
+
+                <Route path="/login" component={Login} />
+                <Route path="/lost-password" component={LostPassword}/>
+                <Route path="/register" component={Register} />
+                <Route path="/verify" component={Verification} />
                 <Route path="/cart" component={Cart} />
+                {/* 404 */}
+                <Route path='*' component={Home}/>
         </Switch>
         <Footer/>
     </Router>

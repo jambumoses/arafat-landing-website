@@ -179,3 +179,99 @@
     font-family: poppins,sans-serif;
     letter-spacing: 1px;
 }
+
+
+
+.home_products_section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: black;
+    padding: 2% 5%;
+}
+
+.home_products_section_item{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    /* width: 25%; */
+    width: 300px;
+    height: 300px;
+    margin: 50px 20px;
+}
+
+.home_products_section_img{
+    display: flex;
+    height: 250px;
+    background-color: transparent;/* 
+    background-size: 170px !important; */
+    transition: 0.3s linear;
+    cursor: pointer;
+    transform: scale(1);
+    transition: 0.3s linear;
+}
+
+.home_products_section_img:hover{
+    transform: scale(1);
+    transition: 0.3s linear;
+}
+
+.home_products_section_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+}
+
+.home_products_section_info_name{
+    text-transform: capitalize;
+    font-family: poppins,sans-serif;
+    color: darkslategray;
+}
+
+.home_products_section_info_price{
+    font-weight: bold;
+    color: white;
+}
+
+.home_products_section_info_price small{
+    font-weight: initial;
+    font-family: sans-serif;
+    font-size: 10px;
+    color: grey;
+}
+
+.home_products_section_morebtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px 5%;
+    background-color: black;
+}
+
+.home_products_section_morebtn a{
+    text-decoration: none;
+}
+
+.home_products_section_morebtn a button{
+    font-size: 14px;
+    padding: 5px 20px;
+    margin-bottom: 50px;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    font-family: poppins, sans-serif;
+    background-color: transparent;
+    color: gray;
+    border: 1px solid silver;
+    border-radius: 5px;
+    transition: 0.3s linear;
+}
+
+
+.home_products_section_morebtn a button:hover{
+    background-color: white;
+    color: grey;
+    transition: 0.3s linear;
+}
