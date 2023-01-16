@@ -95,6 +95,7 @@ export default function Categories() {
               <div className='category_in_specific_item_top_img'>
                 <span className='category_in_specific_item_top_img_btns'>
                   <a href="">$ 200</a>
+                  <a href=""><i className="fa fa-cart-plus"></i></a>
                 </span>
                 <span className='category_in_specific_item_top_img_thumbnail' style={{backgroundImage: `url(${ require("./img/product1.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
               </div>
@@ -109,6 +110,7 @@ export default function Categories() {
                 </div>
                 <div className='category_in_specific_item_info_prices'>
                   <a href="">$ 200</a>
+                  <a href=""><i className="fa fa-cart-plus"></i></a>
                 </div>
               </div>
             </div>
@@ -122,6 +124,7 @@ export default function Categories() {
                 </div>
                 <div className='category_in_specific_item_info_prices'>
                   <a href="">$ 200</a>
+                  <a href=""><i className="fa fa-cart-plus"></i></a>
                 </div>
               </div>
             </div>
@@ -135,6 +138,7 @@ export default function Categories() {
                 </div>
                 <div className='category_in_specific_item_info_prices'>
                   <a href="">$ 200</a>
+                  <a href=""><i className="fa fa-cart-plus"></i></a>
                 </div>
               </div>
             </div>
@@ -148,6 +152,7 @@ export default function Categories() {
                 </div>
                 <div className='category_in_specific_item_info_prices'>
                   <a href="">$ 200</a>
+                  <a href=""><i className="fa fa-cart-plus"></i></a>
                 </div>
               </div>
             </div>
@@ -161,6 +166,7 @@ export default function Categories() {
                 </div>
                 <div className='category_in_specific_item_info_prices'>
                   <a href="">$ 200</a>
+                  <a href=""><i className="fa fa-cart-plus"></i></a>
                 </div>
               </div>
             </div>

@@ -100,25 +100,89 @@
 .members_section_main_title{
     color: rgb(182, 182, 182);
     font-weight: bold;
-    text-transform: uppercase;
+    font-family: poppins,sans-serif;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 20px;
     margin-bottom: 100px;
 }
 
-.members_section_member_container{
+.members_section_member_container_main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex-wrap: wrap;
-    height: 280px;
     background-color: transparent;
+    height: 300px;
+}
+
+.members_section_member_container_main section{
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    width: 50%;
+    margin: 0px 10px;
+}
+
+.members_section_member_container_main_image_section{
+    display: block;
+    background-color: darkslategray;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.members_section_member_container_main_image_section img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.members_section_member_container_main_information_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: transparent;
+    width: 50%;
+    padding-left: 5%;
+    padding: 50px;
+}
+
+.members_section_member_container_main_information_section .name{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: lightslategray;
+}
+
+.members_section_member_container_main_information_section .role{
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: initial;
+    font-family: poppins,sans-serif;
+    padding-top: 5px;
+    color: grey;
+}
+
+.members_section_member_container{
+    display: block;
+/*     flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap; */
+    height: 280px;
+    /* background-color: rgba(173, 216, 230, 0.199); */
+    background-color: transparent;
+    cursor: move;
     overflow: hidden;
 }
 
+
 .members_section_member{
+    display: inline-block;
     background-color: transparent;
     height: 250px;
     width: 230px;
-    margin: 20px;
+    margin: 20px 0px;
 }
 
 
@@ -133,21 +197,25 @@
 .members_section_member_info{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .members_section_member_info span{
     text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
     font-family: "poppins",sans-serif;
-    font-size: 15px;
-    color: rgb(182, 182, 182);
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: bold;
+    color: lightslategray;
 }
 
 .members_section_member_info .members_section_member_info_titles{
+    font-family: poppins,sans-serif;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 13px;
+    font-weight: initial;
+    padding-top: 5px;
     color: grey;
-    font-weight: 500;
-    font-size: 12px;
-    font-family: poppins;
 }

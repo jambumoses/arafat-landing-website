@@ -1,130 +1,64 @@
-import React from 'react'
+import {React,useState,useEffect} from 'react'
 import orderimg from "./img/chair.png"
+import { commerce } from './lib/commerce';
+
+
+/* order item */
+function OrderItem({id,name,image,price}){
+  return(
+    <div className='order_section_card'>
+      <span className='order_section_card_img'>
+        <img src={image} alt="" />
+      </span>
+      <span className='order_section_card_title'><a href=''>{name}</a></span>
+      <span className='order_section_card_price'>
+        <span>{price}</span>
+        <span><i className="fa fa-cart-plus"></i></span>
+      </span>
+    </div>
+  )
+}
+
+
+
+function FilterOptions(name,value){
+  return(
+    <option value="hi">hello</option>
+  );
+}
+
 
 export default function Orders() {
+
+  const [products,setProducts] = useState([])
+
+  const fetchProducts = async () => {
+    const {data} = await commerce.products.list();
+    setProducts(data);
+  }
+
+  useEffect(()=>{
+    fetchProducts();
+  },[])
+
   return (
     <>
     <div className='filterbar'>
       filter 
       <select name="" id="">
-        <option value="">all categories</option>
-        <option value="">serviette</option>
-        <option value="">toilet paper</option>
-        <option value="">napkin</option>
-        <option value="">kitchen towels</option>
+        <option value="all">all categories</option>
+            <FilterOptions/>
+            <FilterOptions/>
+            <FilterOptions/>
+            <FilterOptions/>
       </select>
     </div>
 
     <section className='order_section'>
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/chair.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 10</span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product1.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 99.<small>99</small></span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product2.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 40</span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product3.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 100</span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product4.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 200</span>
-      </div>
-
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product5.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 20</span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product1.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 400</span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product2.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 17</span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product1.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 60</span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/chair.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 10</span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product1.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 99.<small>99</small></span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product2.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 40</span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product3.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 100</span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product4.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 200</span>
-      </div>
-
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product5.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 20</span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product1.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 400</span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product2.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 17</span>
-      </div>
-
-      <div className='order_section_card'>
-        <span className='order_section_card_img' style={{backgroundImage: `url(${ require("./img/product1.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></span>
-        <span className='order_section_card_title'><a href=''>cet23 serviette</a></span>
-        <span className='order_section_card_price'>$ 60</span>
-      </div>
+      {products.map(function(item){
+        return (<OrderItem key={item.id} id={item.id} image={item.image.url} name={item.name} price={item.price.formatted_with_symbol}/>)
+      })}
+      
     </section>
     
     <div className='seemore_section'>

@@ -54,6 +54,12 @@
     height: 150px;
 }
 
+.brand_image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 .brand_description{
     background-color: transparent;
     height: 100px;

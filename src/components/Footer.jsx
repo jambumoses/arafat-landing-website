@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import PhoneIcon from '@mui/icons-material/Phone';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import EmailIcon from '@mui/icons-material/Email';
+//import PhoneIcon from '@mui/icons-material/Phone';
+//import LocationOnIcon from '@mui/icons-material/LocationOn';
+//import EmailIcon from '@mui/icons-material/Email';
 import FooterBrands from './FooterBrands';
 import NewsLetters from './NewsLetters';
 
+import { useSelector } from 'react-redux';
+
 export default function Footer() {
+
+    const constantInfo = useSelector(state=>state.constant.data)
+
     const newyear =new Date().getFullYear();
     const [year,setYear] = useState(newyear);
 
@@ -24,21 +29,24 @@ export default function Footer() {
     <section className='footer'>
         <section className='footer_container'>
             <section className='footer_logo_contain'>
-                <div className='footer_logo'></div>
-                <span className='footer_logo_Description'>The Number 1 Distributor of Fast Moving Consumer goods.</span>
+                <div className='footer_logo'>
+                    <img src={require(`${constantInfo.logo.footer}`)} alt="" />
+                </div>
+                <span className='footer_logo_Description'>{constantInfo.CompanyDescription}</span>
             </section>
 
             <section className='footer_note_contain'>
                 <div className='foot_note'>
                     <span className='foot_note_title'>quick link</span>
                     <div className='foot_note_info'>
-                        <span><Link to="/" className='foot_note_info_c foot_note_info_nav'>home</Link></span>
-                        <span><Link to="/about" className='foot_note_info_c foot_note_info_nav'>about us</Link></span>
-                        <span><Link to="/brands" className='foot_note_info_c foot_note_info_nav'>brands</Link></span>
-                        <span><Link to="/orders" className='foot_note_info_c foot_note_info_nav'>order now</Link></span>
-                        <span><Link to="/categories" className='foot_note_info_c foot_note_info_nav'>categories</Link></span>
-                        <span><Link to="/contact" className='foot_note_info_c foot_note_info_nav'>contact us</Link></span>
-                        <span><Link to="/accounts" className='foot_note_info_c foot_note_info_nav'>accounts</Link></span>
+                        {
+                            constantInfo.navigation.map(function(item){
+                                return(
+                                    <span><Link to={item.link} className='foot_note_info_c foot_note_info_nav'>{item.name}</Link></span>
+                                )
+                            })
+                        }
+                        
                     </div>
                 </div>
 
@@ -58,17 +66,20 @@ export default function Footer() {
                 <div className='foot_note'>
                     <span className='foot_note_title'>contact us</span>
                     <div className='foot_note_info'>
-                        <span><i className="fa fa-location-dot" style={{color:"white",fontSize: "15px"}}></i> <a href="https://google.map">Namanve Plot 1769 Jinja</a></span>
-                        <span><i className="fa fa-phone" style={{color:"white",fontSize: "15px"}}></i> <a href="tel:+256776291115">+256 776  291115</a></span>
-                        <span><i className="fa fa-envelope" style={{color:"white",fontSize: "15px"}}></i> <a href="mailto:info@africanqueen.co.ug" >info@africanqueen.co.ug</a></span>
+                        <span><i className={constantInfo.Contact.location.fontawesome_icon} style={{color:"white",fontSize: "15px"}}></i> <a href="https://google.map">{constantInfo.Contact.location.address}</a></span>
+                        <span><i className={constantInfo.Contact.phone.fontawesome_icon} style={{color:"white",fontSize: "15px"}}></i> <a href="tel:+256776291115">{constantInfo.Contact.phone.title}</a></span>
+                        <span><i className={constantInfo.Contact.email.fontawesome_icon} style={{color:"white",fontSize: "15px"}}></i> <a href="mailto:info@africanqueen.co.ug" >{constantInfo.Contact.email.mail}</a></span>
                     </div>
                     <div className='footer_socials'>
                         <span className='footer_socials_title'>follow us</span>
                         <span className='footer_socials_listings'>
-                            <a href="#"><i className="fab fa-facebook" style={{color:"white",fontSize: "15px"}}></i></a>
-                            <a href="#"><i className="fab fa-linkedin" style={{color:"white",fontSize: "15px"}}></i></a>
-                            <a href="#"><i className="fab fa-instagram" style={{color:"white",fontSize: "15px"}}></i></a>
-                            <a href="#"><i className="fab fa-twitter" style={{color:"white",fontSize: "15px"}}></i></a>
+                            {
+                                constantInfo.socials.social.map(function(item){
+                                    return(
+                                        <a href={item.link}><i className={item.fontawesome_icon} style={{color:"white",fontSize: "15px"}}></i></a>
+                                    )
+                                })
+                            }
                         </span>
                     </div>
                 </div>
@@ -76,7 +87,7 @@ export default function Footer() {
         </section>
 
         <section className='footer_bottom'>
-        © {year} African Queen No1 Distributor LTD. All Rights Reserved.
+        © {year} {constantInfo.footerCompanyTitle}. All Rights Reserved.
         </section>
     </section>
     </>

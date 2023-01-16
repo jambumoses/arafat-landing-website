@@ -26,8 +26,9 @@
 }
 
 .newsletters_paragraph{
-    font-size: 15px;
-    font-family: monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-family: poppins;
     color: lightgray;
     padding-bottom: 40px;
 }
@@ -77,18 +78,23 @@
     background-color: black;
     height: 150px;
     padding: 0px 5%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     overflow: hidden;
 }
 
 .footer_brands_item{
-    /* background-color: rgba(211, 211, 211, 0.089); */
-    background-color: transparent;
+    /* background-color: rgba(211, 211, 211, 0.089) !important; */
+    background-color: transparent !important;
     height: 100px;
     width: 200px;
     margin: 20px;
 }
 
+.footer_brands_item img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
 
 .footer{
@@ -123,15 +129,22 @@
     justify-content: center;
     height: 100px;
     width: 200px;
-    background: url("../../img/AQ-LOGO.png") no-repeat center; 
+/*     background: url("../../img/AQ-LOGO.png") no-repeat center; 
     background-position: center;
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     /* background-color: rgba(245, 245, 245, 0.377); */
 }
 
+.footer_logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 .footer_logo_Description{
-    font-size: 15px;
+    font-size: 14px;
+    text-align: left;
     font-family: poppins, sans-serif;
     margin-top: 20px;
     text-transform: capitalize;

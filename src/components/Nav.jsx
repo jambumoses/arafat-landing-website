@@ -2,16 +2,21 @@ import React, { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import {useSelector} from "react-redux"
 
 import {Link} from "react-router-dom";
 
 export default function Nav() {
+    
+    const constantInfo = useSelector(state=>state.constant.data)
 
   return (
     <>
 
     <nav className='navigation'>
-        <div className='navigation_logo_section'></div>
+        <div className='navigation_logo_section'>
+            <img src={require(`${constantInfo.logo.nav}`)} alt="" />
+        </div>
 
         <nav className='navigation_nav'>
             <div>
@@ -41,7 +46,7 @@ export default function Nav() {
             </div>
             <div className='navigation_nav_accounts'>
                 <Link to="/accounts" className='user_links account-drop_cont'>
-                    <span className=''><i className="fa fa-user" style={{fontSize:"16px", color:"lightgreen"}}></i></span>
+                    <span className='nav-icon'><i className="fa fa-user"></i></span>
 {/*                     <ul className='account_dropdown'>
                         <li className='border-d'><a href=''>signup</a></li>
                         <li className='border-d'><a href=''>signin</a></li>
@@ -49,7 +54,7 @@ export default function Nav() {
                     </ul> */}
                 </Link>
                 {/* <span onClick={showAccount} className='user_links'><i className="fa fa-user" style={{fontSize:"16px", color:"lightgreen",cursor: "pointer"}}></i></span> */}
-                <Link to="/cart" className='user_links'><span><i className="fa fa-shopping-cart" style={{fontSize:"16px", color:"lightgreen"}}></i> <sup style={{color:"white"}}>12</sup></span></Link>
+                <Link to="/cart" className='user_links'><span className='nav-icon'><i className="fa fa-shopping-cart"></i> <sup style={{color:"grey"}}>12</sup></span></Link>
             </div>
         </nav>
 

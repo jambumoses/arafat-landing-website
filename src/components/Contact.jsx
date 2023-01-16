@@ -1,17 +1,21 @@
 import React from 'react'
+import {useSelector} from "react-redux"
 
 export default function Contact() {
+
+  const constantInfo = useSelector(state=>state.constant.data)
+
   return (
     <>
     <section className='contact_section'>
       <div className='map_wrapper'>
-        <span className='map_wrapper_heading'>let's make something awesome together.</span>
-        <span className='map_wrapper_note'>To efficiently distribute quality products that delight customers and deliver sustainable stakeholder value</span>
+        <span className='map_wrapper_heading'>{constantInfo.contactUsPage.BannerHeading}</span>
+        <span className='map_wrapper_note'>{constantInfo.contactUsPage.BannerDescription}</span>
       </div>
 
       <div className="mapouter">
         <div className="gmap_canvas">
-          <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=african%20queen&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+          <iframe id="gmap_canvas" src={constantInfo.contactUsPage.mapLocation} frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
           </iframe>
         </div>
       </div>
@@ -24,32 +28,33 @@ export default function Contact() {
     <section className='getintouch_section' id='bottom'>
       <section className='getintouch_section_left'>
         <div className='getintouch_section_left_cont'>
-          <i className='fa fa-location-dot'></i> <span> Namanve Plot 1769 Jinja</span>
+          <i className={constantInfo.Contact.location.fontawesome_icon}></i> <span> {constantInfo.Contact.location.address}</span>
         </div>
 
         <div className='getintouch_section_left_cont'>
-          <i className='fa fa-phone'></i> <span>+256 776 291115</span>
+          <i className={constantInfo.Contact.phone.fontawesome_icon}></i> <span>{constantInfo.Contact.phone.title}</span>
         </div>
 
         <div className='getintouch_section_left_cont'>
-          <i className='fa fa-envelope'></i> <span>info@africanqueen.co.ug</span>
+          <i className={constantInfo.Contact.email.fontawesome_icon}></i> <span>{constantInfo.Contact.email.mail}</span>
         </div>
 
         <div className='getintouch_section_left_socials'>
-          <h3>follow us</h3>
+          <h3>{constantInfo.socials.heading}</h3>
           <span>
-            <a href="#"><i className="fab fa-twitter"></i></a>
-            <a href="#"><i className="fab fa-instagram"></i></a>
-            <a href="#"><i className="fab fa-facebook"></i></a>
-            <a href="#"><i className="fab fa-linkedin"></i></a>
+            {constantInfo.socials.social.map(function(item){
+              return(
+                <a href={item.link}><i className={item.fontawesome_icon}></i></a>
+              )
+            })}
           </span>
         </div>
       </section>
       
       <section className='getintouch_section_right'>
-        <h3>get in touch</h3>
+        <h3>{constantInfo.contactUsPage.contactFormTitle}</h3>
         <span className='getintouch_section_right_note'>
-          <span>To efficiently distribute quality products that delight</span>
+          <span>{constantInfo.contactUsPage.contactFormDescription}</span>
         </span>
         <form action="" method="post">
           <div className='getintouch_name_phone'>
@@ -68,7 +73,7 @@ export default function Contact() {
     <section>
       <div className="mapouter_show">
           <div className="gmap_canvas_show">
-            <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=african%20queen&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            <iframe id="gmap_canvas" src={constantInfo.contactUsPage.mapLocation} frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
             </iframe>
           </div>
       </div>

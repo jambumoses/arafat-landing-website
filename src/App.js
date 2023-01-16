@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from './components/Nav'
 import "./components/statics/css/main.css"
 import $ from 'jquery'
@@ -22,8 +22,36 @@ import Login from './components/Login';
 import LostPassword from './components/LostPassword';
 import Verification from './components/Verification';
 
+import { commerce } from './components/lib/commerce';
+
+//import {useSelector,useDispatch} from "react-redux";
+//import { productActions } from './store/products-slice';
+
+
+
 
 export default function App() {
+
+  const [products,setProducts] = useState([])
+  //const dispatch = useDispatch();
+
+
+  const fetchProducts = async () => {
+    const {data} = await commerce.products.list();
+    //dispatch(productActions.getProducts(data));
+    setProducts(data);
+  }
+
+  useEffect(()=>{
+    fetchProducts();
+  },[])
+
+
+  //const dataP = useSelector(state=>state.products.data);
+  //console.log(dataP);
+
+  
+  console.log(products);
 
   return (
     <>
@@ -36,7 +64,7 @@ export default function App() {
 
                 <Route path="/about" component={About} />
                 <Route path="/brands" component={Brands} />
-                <Route path="/orders" component={Orders} />
+                <Route path="/orders" component={Orders}/>
                 <Route path="/categories" component={Categories} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/accounts" component={Accounts} />

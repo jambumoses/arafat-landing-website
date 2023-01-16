@@ -1,10 +1,62 @@
 import {React,useEffect} from 'react'
 import Aos from "aos";
 import "aos/dist/aos.css";
+import {useSelector} from "react-redux"
 import member from "./img/member.jpg";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
+
+
+
+
+
+/* ManagementTeam card */
+function ManagementTeam({image,name,role}){
+  return(
+    <div  data-aos="fade-up" className='members_section_member'>
+      <div className='members_section_member_thumbnail' style={{backgroundImage: `url(${ require("./img/member_remove.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
+      <div className='members_section_member_info'>
+        <span>{name}</span>
+        <span className='members_section_member_info_titles'>{role}</span>
+      </div>
+    </div>
+  )
+}
+
+
+/* BoardMember */
+function BoardMember({image,name,role}){
+  return(
+    <section data-aos="fade-up">
+      <span className='members_section_member_container_main_image_section'>
+        <img src={require("./img/member_remove.png")} alt="" />
+      </span>
+      <span className='members_section_member_container_main_information_section'>
+        <span className='name'>{name}</span>
+        <p className='role'>{role}</p>
+      </span>
+    </section>
+  )
+}
+
+
+
+
 
 export default function About() {
 
+  const constantInfo = useSelector(state=>state.constant.data)
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3
+  };
 
   useEffect(()=>{
       Aos.init({duration: 2000});
@@ -22,14 +74,14 @@ export default function About() {
         <div className='about-container_1_mission'>
           <h2 data-aos="fade-right">Mission</h2>
           <span  data-aos="fade-up">
-          To efficiently distribute quality products that delight customers and deliver sustainable stakeholder value
+          {constantInfo.aboutus.mission}
           </span>
         </div>
 
         <div className='about-container_1_vision'>
           <h2 data-aos="fade-right">Vision</h2>
           <span data-aos="fade-up">
-            Enriching lives through placing quality products at arms length
+          {constantInfo.aboutus.vision}
           </span>
         </div>
 
@@ -39,135 +91,45 @@ export default function About() {
       
       
       <section className='about-container_2'>
-        <p data-aos="fade-up">
-          African Queen No. 1 Distributor Limited is a privately-owned organization in the business of large-scale importation and distribution of Fast-Moving Consumer goods in the categories of Personal Care (Hair and Skin), Stationery, Homecare and Foods & Beverages.
-        </p>
 
-        <p data-aos="fade-up">
-          From a humble beginning of a small shop in the heart of Kampala downtown area of kikuubo, African Queen has grown into the leading distributor of Fast-Moving Consumer Goods in Uganda. Currently, the company has eight depots around the country i.e. in the Central Business District (2 Depots), Namanve, Gulu, Mbarara, Masaka, Hoima and Mbale.
-        </p>
+        {constantInfo.aboutus.notes.map(function(item){
+          return(
+            <p data-aos="fade-up">
+              {item}
+            </p>
+          )
+        })}
 
-        <p data-aos="fade-up">
-          We pride ourselves in distributing only the best quality affordable products from world known manufacturers including; PZ Cussons East Africa ,HACO Industries, Kimfay East Africa, Kevian East Africa, Trident Industries, Great Lakes Brands, Suntory Beverages,Trufoods East African, Bic East Africa, Loreal East Africa, GlaxoSmithKline (GSK),Proctor & Allan Industries, Ketepa and Molfix Industries
-        </p>
-
-        <p data-aos="fade-up">
-          We have been recognized by the Uganda Revenue Authority as being one of largest tax payers in the country and in 2019we attained the coveted ‘’Authorized Economic Operator certificate’’ from the tax body.
-        </p>
       </section>
     </section>
 
     <section className='members_section'>
-      <h1 data-aos="fade-up" className='members_section_main_title'>Corporate Governance Board</h1>
-      <div className='members_section_member_container'>
-        
-        <div  data-aos="fade-up" className='members_section_member'>
-          <div className='members_section_member_thumbnail' style={{backgroundImage: `url(${ require("./img/member_remove.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
-          <div className='members_section_member_info'>
-            <span>arafat mukulish</span>
-            <span className='members_section_member_info_titles'>CEO AFRICAN QUEEEN</span>
-          </div>
-        </div>
-
-        <div  data-aos="fade-up" className='members_section_member'>
-          <div className='members_section_member_thumbnail' style={{backgroundImage: `url(${ require("./img/member_remove.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
-          <div className='members_section_member_info'>
-            <span>arafat mukulish</span>
-            <span className='members_section_member_info_titles'>CEO AFRICAN QUEEEN</span>
-          </div>
-        </div>
-
-        <div  data-aos="fade-up" className='members_section_member'>
-          <div className='members_section_member_thumbnail' style={{backgroundImage: `url(${ require("./img/member_remove.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
-          <div className='members_section_member_info'>
-            <span>arafat mukulish</span>
-            <span className='members_section_member_info_titles'>CEO AFRICAN QUEEEN</span>
-          </div>
-        </div>
-
-        <div  data-aos="fade-up" className='members_section_member'>
-          <div className='members_section_member_thumbnail' style={{backgroundImage: `url(${ require("./img/member_remove.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
-          <div className='members_section_member_info'>
-            <span>arafat mukulish</span>
-            <span className='members_section_member_info_titles'>CEO AFRICAN QUEEEN</span>
-          </div>
-        </div>
-
-        <div  data-aos="fade-up" className='members_section_member'>
-          <div className='members_section_member_thumbnail' style={{backgroundImage: `url(${ require("./img/member_remove.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
-          <div className='members_section_member_info'>
-            <span>arafat mukulish</span>
-            <span className='members_section_member_info_titles'>CEO AFRICAN QUEEEN</span>
-          </div>
-        </div>
-
-        <div  data-aos="fade-up" className='members_section_member'>
-          <div className='members_section_member_thumbnail' style={{backgroundImage: `url(${ require("./img/member_remove.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
-          <div className='members_section_member_info'>
-            <span>arafat mukulish</span>
-            <span className='members_section_member_info_titles'>CEO AFRICAN QUEEEN</span>
-          </div>
-        </div>
+      <h1 data-aos="fade-up" className='members_section_main_title'>{constantInfo.aboutus.membership.board.title}</h1>
+      <div className='members_section_member_container_main'>
+        {
+          constantInfo.aboutus.membership.board.members.map(function(item){
+            return(
+              <BoardMember image={item.image} name={item.name} role={item.role}/>
+            )
+          })
+        }
       </div>
     </section>
 
-
-
-
-
-
     
     <section className='members_section'>
-      <h1 data-aos="fade-up" className='members_section_main_title'>The Management Team</h1>
-      <div className='members_section_member_container'>
-        
-        <div  data-aos="fade-up" className='members_section_member'>
-          <div className='members_section_member_thumbnail' style={{backgroundImage: `url(${ require("./img/member_remove.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
-          <div className='members_section_member_info'>
-            <span>arafat mukulish</span>
-            <span className='members_section_member_info_titles'>CEO AFRICAN QUEEEN</span>
-          </div>
-        </div>
-
-        <div  data-aos="fade-up" className='members_section_member'>
-          <div className='members_section_member_thumbnail' style={{backgroundImage: `url(${ require("./img/member_remove.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
-          <div className='members_section_member_info'>
-            <span>arafat mukulish</span>
-            <span className='members_section_member_info_titles'>CEO AFRICAN QUEEEN</span>
-          </div>
-        </div>
-
-        <div  data-aos="fade-up" className='members_section_member'>
-          <div className='members_section_member_thumbnail' style={{backgroundImage: `url(${ require("./img/member_remove.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
-          <div className='members_section_member_info'>
-            <span>arafat mukulish</span>
-            <span className='members_section_member_info_titles'>CEO AFRICAN QUEEEN</span>
-          </div>
-        </div>
-
-        <div  data-aos="fade-up" className='members_section_member'>
-          <div className='members_section_member_thumbnail' style={{backgroundImage: `url(${ require("./img/member_remove.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
-          <div className='members_section_member_info'>
-            <span>arafat mukulish</span>
-            <span className='members_section_member_info_titles'>CEO AFRICAN QUEEEN</span>
-          </div>
-        </div>
-
-        <div  data-aos="fade-up" className='members_section_member'>
-          <div className='members_section_member_thumbnail' style={{backgroundImage: `url(${ require("./img/member_remove.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
-          <div className='members_section_member_info'>
-            <span>arafat mukulish</span>
-            <span className='members_section_member_info_titles'>CEO AFRICAN QUEEEN</span>
-          </div>
-        </div>
-
-        <div  data-aos="fade-up" className='members_section_member'>
-          <div className='members_section_member_thumbnail' style={{backgroundImage: `url(${ require("./img/member_remove.png") })`, backgroundPosition: "center", backgroundSize: "contain", backgroundRepeat: "no-repeat"}}></div>
-          <div className='members_section_member_info'>
-            <span>arafat mukulish</span>
-            <span className='members_section_member_info_titles'>CEO AFRICAN QUEEEN</span>
-          </div>
-        </div>
+      <h1 data-aos="fade-up" className='members_section_main_title'>{constantInfo.aboutus.membership.managementTeam.title}</h1>
+      <div data-aos="fade-up" className='members_section_member_container'>
+      
+        <Slider {...settings}>
+          {
+           constantInfo.aboutus.membership.managementTeam.members.map(function(item){
+             return(
+              <ManagementTeam image={item.image} name={item.name} role={item.role}/>
+             )
+           }
+          )}
+        </Slider>
       </div>
     </section>
     </>
