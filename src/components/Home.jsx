@@ -1,11 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Carousel from 'react-bootstrap/Carousel'
 import img from "../components/img/pic1.jpg";
 import img1 from "../components/img/pic2.jpg";
+import { useSelector } from 'react-redux';
+import { commerce } from './lib/commerce';
 
 
 export default function Home() {
+
+  const [data_,set_data]=useState([])
+
+  const fu = async ()=>{
+    const {data} = await commerce.products.list();
+    set_data(data)
+  }/* 
+  setInterval(() => {
+    fu()
+  }, 500); */
+
+  //console.log(data_)
+
+
   return (
     <>
     <section className='wrapper'>

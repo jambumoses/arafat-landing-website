@@ -1,9 +1,40 @@
 import {React,useState,useEffect} from 'react'
 import orderimg from "./img/chair.png"
 import { commerce } from './lib/commerce';
+import {useSelector,useDispatch} from "react-redux";
 
 
-/* order item */
+
+export default function Orders() {
+
+  const [orders,setOrders] = useState()
+  const [OrderCategories,setOrderCategories] = useState([])
+
+  const getOrders = async ()=>{
+    const {data} = await commerce.products.list();
+    setOrders(data)
+  }
+
+  const getOrderCategories = async ()=>{
+    const {data} = await commerce.categories.list();
+    setOrderCategories(data)
+  }
+
+  /* update on useEffect */
+  useEffect(()=>{
+    getOrders()
+    getOrderCategories()
+  },[])
+  
+  /* update every after 1000 seconds */
+  setInterval(() => {
+    getOrders()
+    getOrderCategories()
+  }, 1000);
+
+
+
+  /* order item */
 function OrderItem({id,name,image,price}){
   return(
     <div className='order_section_card'>
@@ -21,25 +52,14 @@ function OrderItem({id,name,image,price}){
 
 
 
-function FilterOptions(name,value){
+function FilterOptions({data}){
   return(
-    <option value="hi">hello</option>
+    <option value={data.slug}>{data.name}</option>
   );
 }
+  
 
 
-export default function Orders() {
-
-  const [products,setProducts] = useState([])
-
-  const fetchProducts = async () => {
-    const {data} = await commerce.products.list();
-    setProducts(data);
-  }
-
-  useEffect(()=>{
-    fetchProducts();
-  },[])
 
   return (
     <>
@@ -47,18 +67,26 @@ export default function Orders() {
       filter 
       <select name="" id="">
         <option value="all">all categories</option>
-            <FilterOptions/>
-            <FilterOptions/>
-            <FilterOptions/>
-            <FilterOptions/>
+            {
+            OrderCategories.map(function(item){
+              return(
+                <FilterOptions key={item.id} data={item}/>
+              )
+            })
+            }
       </select>
     </div>
 
     <section className='order_section'>
-      {products.map(function(item){
+      {
+      orders && orders.map(function(item){
         return (<OrderItem key={item.id} id={item.id} image={item.image.url} name={item.name} price={item.price.formatted_with_symbol}/>)
-      })}
-      
+      })
+      }
+
+      {
+      !orders && <span style={{color: "red"}}>loading...</span>
+      }
     </section>
     
     <div className='seemore_section'>

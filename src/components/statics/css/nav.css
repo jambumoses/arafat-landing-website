@@ -91,6 +91,7 @@
 
 .category_drop_cont:hover .category_dropdown{
     display: block;
+    font-family: poppins,sans-serif;
 }
 
 .category_drop_cont:hover .category_drop{
@@ -98,6 +99,7 @@
 }
 
 .category_dropdown li{
+    font-family: poppins,sans-serif;
     text-decoration: none;
     list-style: none;
     padding: 4px 0px;
@@ -112,7 +114,7 @@
     font-size: 14px;
     text-transform: capitalize;
     color: grey;
-    font-family: poppins;
+    font-family: poppins,sans-serif;
     transition: 0.2s linear;
 }
 

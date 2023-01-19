@@ -1,13 +1,28 @@
 import {createSlice} from "@reduxjs/toolkit";
+//import {commerce} from "../components/lib/commerce";
 
+/* export async function getStaticProps(){
+  const merchant = await commerce.merchants.about();
+  const {data: categories} = await commerce.categories.list();
+  const {data: products} = await commerce.products.list();
 
+  return{
+    props: {
+      merchant,
+      categories,
+      products
+    }
+  }
+} */
+
+//console.log(getStaticProps());
 
 const productSlice = createSlice({
     name: "api",
-    initialState: {commerceAPI: null},
+    initialState: {},
     reducers:{
         getProducts(state,action){
-            state.data = action.payload;
+            state.products = action.payload;
         },
         addToCart(state,action){},
         removeFromCart(state,action){},

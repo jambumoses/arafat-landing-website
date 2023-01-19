@@ -22,36 +22,48 @@ import Login from './components/Login';
 import LostPassword from './components/LostPassword';
 import Verification from './components/Verification';
 
-import { commerce } from './components/lib/commerce';
+//import { commerce } from './components/lib/commerce';
 
 //import {useSelector,useDispatch} from "react-redux";
 //import { productActions } from './store/products-slice';
 
 
+/* export async function getStaticProps(){
+  const merchant = await commerce.merchants.about();
+  const {data: categories} = await commerce.categories.list();
+  const {data: products} = await commerce.products.list();
+
+  return{
+    props: {
+      merchant,
+      categories,
+      products
+    }
+  }
+} */
+
 
 
 export default function App() {
-
-  const [products,setProducts] = useState([])
   //const dispatch = useDispatch();
 
-
-  const fetchProducts = async () => {
-    const {data} = await commerce.products.list();
-    //dispatch(productActions.getProducts(data));
-    setProducts(data);
+/*   const fetchProducts = async () => {
+    const {data: products} = await commerce.products.list();
+    const {data: categories} = await commerce.categories.list();
+    const merchant = await commerce.merchants.about();
+    
+    dispatch(productActions.getProducts(products));
+    //dispatch(categoriesActions.getCategories(categories));
+    //dispatch(merchantActions.getMerchant(merchant));
   }
 
   useEffect(()=>{
     fetchProducts();
-  },[])
+  },[]) */
 
 
-  //const dataP = useSelector(state=>state.products.data);
-  //console.log(dataP);
+  //const dataP = useSelector(state=>state.api.data);
 
-  
-  console.log(products);
 
   return (
     <>
